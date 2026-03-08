@@ -205,7 +205,25 @@
   addTilt('.service-card');
   addTilt('.testimonial-card');
 
-  /* ─── Contact Form ─── */
+  /* ─── Contact Form (EmailJS) ─── */
+  // ┌───────────────────────────────────────────────────────────────────
+  // │ SETUP INSTRUCTIONS (one-time, free):
+  // │ 1. Go to https://www.emailjs.com and create a free account
+  // │ 2. Add a service (Gmail) — connect your Gmail and copy the SERVICE ID
+  // │ 3. Create a template with these variables:
+  // │    {{from_name}}, {{from_email}}, {{company}}, {{service}}, {{budget}}, {{message}}
+  // │ 4. In the template "To Email" field, add all 3 addresses comma-separated
+  // │ 5. Copy your PUBLIC KEY from Account > General
+  // │ 6. Replace the 3 placeholder strings below with your real values
+  // └───────────────────────────────────────────────────────────────────
+  const EMAILJS_PUBLIC_KEY = 'd5RMkVqW2qIWN1Bt1';
+  const EMAILJS_SERVICE_ID = 'service_jq4rjkz';
+  const EMAILJS_TEMPLATE_ID = 'template_vo7ti76';
+
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+
   const form = document.getElementById('contact-form');
   const submitBtn = document.getElementById('submit-btn');
   const successMsg = document.getElementById('form-success');
@@ -218,24 +236,59 @@
       const btnText = submitBtn.querySelector('.btn-text');
       const btnSpinner = submitBtn.querySelector('.btn-spinner');
 
-      // Simulate async submission
       submitBtn.disabled = true;
       btnText.hidden = true;
       btnSpinner.hidden = false;
 
-      await new Promise(r => setTimeout(r, 1600));
+      // Check if EmailJS keys have been configured
+      const keysConfigured = EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY'
+        && EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID'
+        && EMAILJS_TEMPLATE_ID !== 'YOUR_TEMPLATE_ID';
 
-      btnText.hidden = false;
-      btnSpinner.hidden = true;
-      submitBtn.disabled = false;
+      try {
+        if (keysConfigured && typeof emailjs !== 'undefined') {
+          const data = new FormData(form);
+          await emailjs.send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            {
+              from_name: data.get('name'),
+              name: data.get('name'),
+              email: data.get('email'),
+              from_email: data.get('email'),
+              company: data.get('company') || 'Not provided',
+              service: data.get('service') || 'Not specified',
+              budget: data.get('budget') || 'Not specified',
+              message: data.get('message'),
+            }
+          );
+        } else {
+          // Demo mode: simulate a short delay
+          await new Promise(r => setTimeout(r, 1200));
+          console.warn('EmailJS not configured yet — see setup instructions in main.js');
+        }
 
-      form.reset();
-      successMsg.hidden = false;
+        btnText.hidden = false;
+        btnSpinner.hidden = true;
+        submitBtn.disabled = false;
+        form.reset();
+        successMsg.hidden = false;
+        successMsg.querySelector('p').textContent = keysConfigured
+          ? "Thanks! We'll be in touch within 24 hours."
+          : "(Demo mode) Email not sent yet — configure EmailJS keys in main.js.";
 
-      setTimeout(() => {
-        successMsg.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 600, fill: 'both' })
-          .onfinish = () => { successMsg.hidden = true; };
-      }, 4000);
+        setTimeout(() => {
+          successMsg.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 600, fill: 'both' })
+            .onfinish = () => { successMsg.hidden = true; };
+        }, 5000);
+
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        btnText.textContent = 'Error — Try Again';
+        btnText.hidden = false;
+        btnSpinner.hidden = true;
+        submitBtn.disabled = false;
+      }
     });
   }
 
@@ -456,6 +509,62 @@
   const style = document.createElement('style');
   style.textContent = `.active-nav-link { color: var(--accent) !important; }`;
   document.head.appendChild(style);
+
+  /* ─── Testimonials Slider Navigation ─── */
+  (function initTestimonialSlider() {
+    const track = document.querySelector('.testimonials-track');
+    const cards = track ? Array.from(track.querySelectorAll('.testimonial-card')) : [];
+    const dotsContainer = document.getElementById('testimonial-dots');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    if (!track || cards.length === 0) return;
+
+    let current = 0;
+    let autoTimer;
+
+    // Build dot indicators
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Review ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = (index + cards.length) % cards.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      // Update dots
+      dotsContainer.querySelectorAll('.testimonial-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+      resetAuto();
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 6000);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const delta = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(delta) > 50) goTo(current + (delta > 0 ? 1 : -1));
+    });
+
+    // Keyboard
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') goTo(current - 1);
+      if (e.key === 'ArrowRight') goTo(current + 1);
+    });
+
+    resetAuto();
+  })();
 
   /* ─── Hero Text Scramble Effect ─── */
   const heroTitleLine = document.querySelector('.hero-title-gold em');
