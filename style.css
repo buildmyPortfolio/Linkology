@@ -2199,7 +2199,7 @@ body.cursor-hover #cursor-ring {
 
   .hero-content {
     margin-top: 1rem;
-    padding-bottom: 10rem
+    padding-bottom: 12rem
   }
 
   .services-grid {
@@ -2271,9 +2271,13 @@ body.cursor-hover #cursor-ring {
   }
 
   .hero-stats {
+    position: relative;
+    bottom: auto;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 2rem
+    padding: 2rem;
+    width: 100%;
+    margin-top: 2rem
   }
 
   .hero-stat-divider {
@@ -2283,13 +2287,12 @@ body.cursor-hover #cursor-ring {
 
   .hero-actions {
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem
+    align-items: center
   }
 
   .hero-content {
     margin-top: 0;
-    padding-bottom: 6rem
+    padding-bottom: 0
   }
 
   .cta-band-actions {
