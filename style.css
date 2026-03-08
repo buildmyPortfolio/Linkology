@@ -1782,7 +1782,12 @@ body.cursor-hover #cursor-ring {
 
 [data-theme="light"] .form-input {
   background: var(--bg-2);
-  border-color: rgba(0, 0, 0, .1)
+  border-color: rgba(0, 0, 0, .2);
+  color: var(--text)
+}
+
+[data-theme="light"] .form-input::placeholder {
+  color: rgba(26, 26, 46, 0.45)
 }
 
 .form-input:focus {
@@ -1804,7 +1809,22 @@ body.cursor-hover #cursor-ring {
 }
 
 .form-select {
-  cursor: none
+  cursor: none;
+  color-scheme: dark
+}
+
+.form-select option {
+  background: #2d2829;
+  color: #EAEAEA
+}
+
+[data-theme="light"] .form-select {
+  color-scheme: light
+}
+
+[data-theme="light"] .form-select option {
+  background: #FFFFFF;
+  color: #231F20
 }
 
 .form-select-arrow {
@@ -2161,6 +2181,10 @@ body.cursor-hover #cursor-ring {
     display: flex
   }
 
+  .hero {
+    padding-top: 5rem
+  }
+
   .hero-stats {
     gap: 0
   }
@@ -2174,6 +2198,7 @@ body.cursor-hover #cursor-ring {
   }
 
   .hero-content {
+    margin-top: 1rem;
     padding-bottom: 10rem
   }
 
@@ -2263,6 +2288,7 @@ body.cursor-hover #cursor-ring {
   }
 
   .hero-content {
+    margin-top: 0;
     padding-bottom: 6rem
   }
 
