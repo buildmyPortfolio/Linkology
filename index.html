@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linkology — Premium Web Development & Portfolio</title>
+  <meta name="description"
+    content="Linkology crafts high-end, bespoke digital experiences for discerning brands. Premium web development and portfolio solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="LinkologyLogo2.png" alt="Linkology" class="nav-logo-img" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Plans</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#contact" class="nav-link nav-link-cta">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+        </svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#services" class="mobile-link">Plans</a></li>
+      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="#process" class="mobile-link">Process</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <p class="mobile-menu-tagline">Crafting digital excellence.</p>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up">Premium Web Development</p>
+      <h1 class="hero-title reveal-up">
+        <span class="hero-title-line">Linkology —</span>
+        <span class="hero-title-line hero-title-gold"><em>Where Ideas Connect Online</em></span>
+      </h1>
+      <p class="hero-subtitle reveal-up">
+        We design and develop bespoke, high-performance websites<br />
+        that transform brands into unforgettable digital experiences.
+      </p>
+      <div class="hero-actions reveal-up">
+        <a href="#work" class="btn btn-outline">View Our Work</a>
+        <a href="#contact" class="btn btn-gold">Start Your Project</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat reveal-up">
+        <span class="stat-num" data-target="20">20</span>
+        <span class="stat-suffix">+</span>
+        <span class="stat-label">Projects Delivered</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat reveal-up">
+        <span class="stat-num" data-target="98">0</span>
+        <span class="stat-suffix">%</span>
+        <span class="stat-label">Client Satisfaction</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat reveal-up">
+        <span class="stat-num" data-target="4">0</span>
+        <span class="stat-suffix">+</span>
+        <span class="stat-label">Years of Excellence</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE STRIP ========== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Web Design</span><span class="marquee-dot">◆</span>
+      <span>Development</span><span class="marquee-dot">◆</span>
+      <span>Brand Identity</span><span class="marquee-dot">◆</span>
+      <span>UI/UX Design</span><span class="marquee-dot">◆</span>
+      <span>E-Commerce</span><span class="marquee-dot">◆</span>
+      <span>SEO Optimization</span><span class="marquee-dot">◆</span>
+      <span>Web Design</span><span class="marquee-dot">◆</span>
+      <span>Development</span><span class="marquee-dot">◆</span>
+      <span>Brand Identity</span><span class="marquee-dot">◆</span>
+      <span>UI/UX Design</span><span class="marquee-dot">◆</span>
+      <span>E-Commerce</span><span class="marquee-dot">◆</span>
+      <span>SEO Optimization</span><span class="marquee-dot">◆</span>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Left: Illustration -->
+        <div class="about-visual">
+          <div class="about-illustration-wrap">
+            <img src="assets/about-illustration.png" alt="Linkology — Modern Web Development"
+              class="about-illustration-img" />
+            <div class="about-illustration-badge">
+              <span class="about-badge-icon">✷</span>
+              <span class="about-badge-text">Crafting Digital Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="about-content">
+          <p class="section-eyebrow reveal-up">Who We Are</p>
+          <h2 class="section-title reveal-up">
+            We Are Linkology.<br />
+            <em>Crafting Modern Web Experiences.</em>
+          </h2>
+          <div class="about-divider reveal-up"></div>
+          <p class="about-text reveal-up">
+            At Linkology, we believe a website should do more than exist — it should work
+            for your business. We design and build modern websites, portfolios, and digital
+            platforms that are fast, elegant, and built to convert visitors into clients.
+          </p>
+          <p class="about-text reveal-up">
+            Whether you’re a professional building your personal brand or a business launching
+            online, we create web experiences that are simple, powerful, and built to grow with you.
+          </p>
+
+          <!-- Progress bars -->
+          <div class="about-bars reveal-up">
+            <div class="about-bar">
+              <div class="about-bar-label">Performance Focus</div>
+              <div class="about-bar-track">
+                <div class="about-bar-fill" style="--bar-width: 98%"></div>
+              </div>
+              <span class="about-bar-value">98</span>
+            </div>
+            <div class="about-bar">
+              <div class="about-bar-label">SEO Ready</div>
+              <div class="about-bar-track">
+                <div class="about-bar-fill" style="--bar-width: 100%"></div>
+              </div>
+              <span class="about-bar-value">100</span>
+            </div>
+            <div class="about-bar">
+              <div class="about-bar-label">Accessibility Friendly</div>
+              <div class="about-bar-track">
+                <div class="about-bar-fill" style="--bar-width: 100%"></div>
+              </div>
+              <span class="about-bar-value">100</span>
+            </div>
+            <div class="about-bar">
+              <div class="about-bar-label">Best Practices</div>
+              <div class="about-bar-track">
+                <div class="about-bar-fill" style="--bar-width: 100%"></div>
+              </div>
+              <span class="about-bar-value">100</span>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-gold reveal-up">Work With Us</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WORK / PORTFOLIO ========== -->
+  <section class="work section section-dark" id="work">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up">Our Portfolio</p>
+        <h2 class="section-title reveal-up">Work That<br /><em>Speaks for Itself</em></h2>
+      </div>
+
+      <div class="work-filter reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+        <button class="filter-btn" data-filter="landing">Landing Page</button>
+      </div>
+
+      <div class="work-grid">
+
+        <!-- Restaurant Landing Page -->
+        <div class="work-card" data-category="landing">
+          <div class="work-img-wrap">
+            <img src="assets/RestaurantLanding page.png" alt="Restaurant Landing Page" />
+            <div class="work-overlay">
+              <button class="work-view-btn" data-preview="https://buildmyportfolio.github.io/resto-web-demo/">Preview
+                Site →</button>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-tag">Landing Page</span>
+            <h3 class="work-title">Sample Restaurant</h3>
+            <p class="work-desc">A premium restaurant landing page</p>
+          </div>
+        </div>
+
+        <!-- Sherlock Holmes Portfolio -->
+        <div class="work-card" data-category="portfolio">
+          <div class="work-img-wrap">
+            <img src="assets/SherlockProfile.png" alt="Sherlock Holmes Portfolio" />
+            <div class="work-overlay">
+              <button class="work-view-btn"
+                data-preview="https://buildmyportfolio.github.io/buildmyportfolio.dev.github.io/">Preview Site
+                →</button>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-tag">Portfolio</span>
+            <h3 class="work-title">Sherlock Holmes</h3>
+            <p class="work-desc">A detective-themed portfolio site</p>
+          </div>
+        </div>
+
+        <!-- Tony Stark Portfolio -->
+        <div class="work-card" data-category="portfolio">
+          <div class="work-img-wrap">
+            <img src="assets/TonyProfile.png" alt="Tony Stark Portfolio" />
+            <div class="work-overlay">
+              <button class="work-view-btn" data-preview="https://buildmyportfolio.github.io/TonyStark/">Preview Site
+                →</button>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-tag">Portfolio</span>
+            <h3 class="work-title">Tony Stark</h3>
+            <p class="work-desc">A futuristic tech portfolio site</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="work-cta reveal-up">
+        <a href="#contact" class="btn btn-outline-dark">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING / PLANS ========== -->
+  <section class="pricing section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up">Service Offerings</p>
+        <h2 class="section-title reveal-up">What We<br /><em>Can Build For You</em></h2>
+        <p class="section-subtitle reveal-up">
+          Transparent pricing, no hidden fees. Select the package that fits your
+          vision and let us bring it to life.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Plan 1: Portfolio Website -->
+        <div class="pricing-card reveal-up">
+          <div class="pricing-card-number">1️⃣</div>
+          <div class="pricing-card-header">
+            <h3 class="pricing-card-name">Portfolio Website</h3>
+            <p class="pricing-card-desc">Perfect for professionals who want to showcase their work.</p>
+          </div>
+          <div class="pricing-card-price">
+            <span class="pricing-from">Starts at</span>
+            <span class="pricing-currency">₱</span>
+            <span class="pricing-amount">1,500</span>
+          </div>
+          <ul class="pricing-card-features">
+            <li><span class="pricing-check">✓</span> Modern responsive design</li>
+            <li><span class="pricing-check">✓</span> Personal branding &amp; custom layout</li>
+            <li><span class="pricing-check">✓</span> Projects / portfolio showcase</li>
+            <li><span class="pricing-check">✓</span> Contact form integration</li>
+            <li><span class="pricing-check">✓</span> SEO-ready structure</li>
+            <li><span class="pricing-check">✓</span> Deployed &amp; hosted</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline pricing-btn">Get Started</a>
+        </div>
+
+        <!-- Plan 2: Business Website (Most Popular) -->
+        <div class="pricing-card pricing-card-popular reveal-up">
+          <div class="pricing-popular-badge">⭐ Most Popular</div>
+          <div class="pricing-card-number">2️⃣</div>
+          <div class="pricing-card-header">
+            <h3 class="pricing-card-name">Business Website</h3>
+            <p class="pricing-card-desc">Ideal for small businesses that need a strong online presence.</p>
+          </div>
+          <div class="pricing-card-price">
+            <span class="pricing-from">Starts at</span>
+            <span class="pricing-currency">₱</span>
+            <span class="pricing-amount">8,000</span>
+          </div>
+          <ul class="pricing-card-features">
+            <li><span class="pricing-check">✓</span> Up to 5&ndash;7 custom pages</li>
+            <li><span class="pricing-check">✓</span> Mobile optimized design</li>
+            <li><span class="pricing-check">✓</span> Service / product showcase</li>
+            <li><span class="pricing-check">✓</span> Google Maps integration</li>
+            <li><span class="pricing-check">✓</span> Contact &amp; inquiry forms</li>
+            <li><span class="pricing-check">✓</span> Basic SEO optimization</li>
+          </ul>
+          <a href="#contact" class="btn btn-gold pricing-btn">Get Started →</a>
+        </div>
+
+        <!-- Plan 3: Landing Page -->
+        <div class="pricing-card reveal-up">
+          <div class="pricing-card-number">3️⃣</div>
+          <div class="pricing-card-header">
+            <h3 class="pricing-card-name">Landing Page</h3>
+            <p class="pricing-card-desc">Designed to convert visitors into customers.</p>
+          </div>
+          <div class="pricing-card-price">
+            <span class="pricing-from">Starts at</span>
+            <span class="pricing-currency">₱</span>
+            <span class="pricing-amount">3,000</span>
+          </div>
+          <ul class="pricing-card-features">
+            <li><span class="pricing-check">✓</span> High-converting design</li>
+            <li><span class="pricing-check">✓</span> Clear call-to-action sections</li>
+            <li><span class="pricing-check">✓</span> Product or service highlights</li>
+            <li><span class="pricing-check">✓</span> Lead capture forms</li>
+            <li><span class="pricing-check">✓</span> Analytics integration</li>
+            <li><span class="pricing-check">✓</span> Fast loading performance</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline pricing-btn">Get Started</a>
+        </div>
+
+        <!-- Plan 4: Custom Web Application -->
+        <div class="pricing-card reveal-up">
+          <div class="pricing-card-number">4️⃣</div>
+          <div class="pricing-card-header">
+            <h3 class="pricing-card-name">Custom Web Application</h3>
+            <p class="pricing-card-desc">For businesses needing custom tools or automation.</p>
+          </div>
+          <div class="pricing-card-price">
+            <span class="pricing-from">Starts at</span>
+            <span class="pricing-currency">₱</span>
+            <span class="pricing-amount">20,000</span>
+          </div>
+          <ul class="pricing-card-features">
+            <li><span class="pricing-check">✓</span> Custom functionality</li>
+            <li><span class="pricing-check">✓</span> User authentication systems</li>
+            <li><span class="pricing-check">✓</span> Database integration</li>
+            <li><span class="pricing-check">✓</span> Admin dashboards</li>
+            <li><span class="pricing-check">✓</span> API integrations</li>
+            <li><span class="pricing-check">✓</span> Scalable architecture</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline pricing-btn">Get Started</a>
+        </div>
+
+      </div>
+
+      <!-- Add-on Services Row -->
+      <div class="pricing-addons reveal-up">
+        <div class="pricing-addons-inner">
+          <p class="pricing-addons-label">✶ Add-on Services</p>
+          <div class="pricing-addons-list">
+            <span class="addon-pill">Website Hosting Setup</span>
+            <span class="addon-pill">Domain Configuration</span>
+            <span class="addon-pill">Website Maintenance</span>
+            <span class="addon-pill">Performance Optimization</span>
+            <span class="addon-pill">Content Updates</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials section section-dark" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up">Client Voices</p>
+        <h2 class="section-title reveal-up">Words From<br /><em>Those Who Know</em></h2>
+      </div>
+
+      <div class="testimonials-slider">
+        <div class="testimonials-track">
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              Linkology completely transformed our online presence. The attention to detail, the elegance
+              of the design, and the performance of the final product exceeded every expectation we had.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JR</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">James Richardson</span>
+                <span class="testimonial-role">CEO, Aurelius Capital</span>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              Working with Linkology was an absolute pleasure. They understood our brand vision
+              immediately and delivered a website that is simply breathtaking. Our conversions
+              have increased by 240%.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SL</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">Sophie Laurent</span>
+                <span class="testimonial-role">Founder, Maison Luxe</span>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              The team at Linkology are true digital artisans. Their technical expertise combined
+              with their refined design sensibility is rare. Our new platform has received
+              nothing but praise from our clients.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MK</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">Marcus Klein</span>
+                <span class="testimonial-role">Director, Nexus Analytics</span>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              From concept to launch, Linkology nailed every detail. Our new site loads
+              lightning fast, looks stunning, and our clients keep complimenting it. Best
+              investment we made for our brand.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AL</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">Andrea Lim</span>
+                <span class="testimonial-role">Owner, The Bloom Studio</span>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              I was amazed at how quickly they understood my vision. They built me a
+              portfolio that actually gets me clients. No more "nice work" — now people
+              reach out and book.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">RC</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">Rafael Cruz</span>
+                <span class="testimonial-role">Freelance Photographer</span>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              Linkology delivered our e-commerce landing page in record time — and it
+              converted from day one. Professional, responsive, and genuinely passionate
+              about the work they do.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MR</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">Maria Reyes</span>
+                <span class="testimonial-role">Co-founder, Craft & Co.</span>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up">How We Work</p>
+        <h2 class="section-title reveal-up">The Linkology<br /><em>Process</em></h2>
+        <p class="section-subtitle reveal-up">
+          A meticulous, collaborative process engineered to deliver exceptional results —
+          on time, on budget, and beyond expectation.
+        </p>
+      </div>
+
+      <div class="process-timeline">
+
+        <div class="process-step reveal-up">
+          <div class="process-step-left">
+            <div class="process-step-number">01</div>
+          </div>
+          <div class="process-step-connector">
+            <div class="process-connector-dot"></div>
+            <div class="process-connector-line"></div>
+          </div>
+          <div class="process-step-right">
+            <h3 class="process-step-title">Discovery & Strategy</h3>
+            <p class="process-step-text">
+              We begin with an in-depth consultation to understand your brand, goals,
+              audience, and competitive landscape. This forms the strategic foundation
+              for everything that follows.
+            </p>
+            <span class="process-step-tag">Week 1</span>
+          </div>
+        </div>
+
+        <div class="process-step reveal-up">
+          <div class="process-step-left">
+            <div class="process-step-number">02</div>
+          </div>
+          <div class="process-step-connector">
+            <div class="process-connector-dot"></div>
+            <div class="process-connector-line"></div>
+          </div>
+          <div class="process-step-right">
+            <h3 class="process-step-title">Design & Concept</h3>
+            <p class="process-step-text">
+              Our designers craft bespoke wireframes and visual concepts that embody
+              your brand's essence. Every element is considered — typography, colour,
+              spacing, and interaction design.
+            </p>
+            <span class="process-step-tag">Weeks 2–3</span>
+          </div>
+        </div>
+
+        <div class="process-step reveal-up">
+          <div class="process-step-left">
+            <div class="process-step-number">03</div>
+          </div>
+          <div class="process-step-connector">
+            <div class="process-connector-dot"></div>
+            <div class="process-connector-line"></div>
+          </div>
+          <div class="process-step-right">
+            <h3 class="process-step-title">Development & Build</h3>
+            <p class="process-step-text">
+              Pixel-perfect development using modern technologies. We build fast,
+              accessible, and scalable digital products with clean, maintainable code
+              — built to last.
+            </p>
+            <span class="process-step-tag">Weeks 4–6</span>
+          </div>
+        </div>
+
+        <div class="process-step reveal-up">
+          <div class="process-step-left">
+            <div class="process-step-number">04</div>
+          </div>
+          <div class="process-step-connector">
+            <div class="process-connector-dot"></div>
+            <div class="process-connector-line"></div>
+          </div>
+          <div class="process-step-right">
+            <h3 class="process-step-title">Launch & Optimise</h3>
+            <p class="process-step-text">
+              Rigorous quality assurance, performance optimisation, and a seamless
+              launch. Post-launch, we provide ongoing support, analytics review,
+              and continuous improvement.
+            </p>
+            <span class="process-step-tag">Week 7+</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BAND ========== -->
+  <section class="cta-band">
+    <div class="cta-band-bg"></div>
+    <div class="container">
+      <div class="cta-band-content">
+        <p class="cta-band-eyebrow reveal-up">Ready to Begin?</p>
+        <h2 class="cta-band-title reveal-up">
+          Your Vision Deserves<br />
+          <em>an Extraordinary Website.</em>
+        </h2>
+        <p class="cta-band-subtitle reveal-up">
+          Let's create something remarkable together.
+          Premium websites for brands that demand the best.
+        </p>
+        <div class="cta-band-actions reveal-up">
+          <a href="#contact" class="btn btn-gold">Start Your Project</a>
+          <a href="#work" class="btn btn-ghost">See Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <p class="section-eyebrow reveal-up">Get in Touch</p>
+          <h2 class="section-title reveal-up">Let's Create<br /><em>Something Great</em></h2>
+          <div class="contact-divider reveal-up"></div>
+          <p class="contact-text reveal-up">
+            We work with a select number of clients each quarter to ensure every
+            project receives the attention it deserves. Reach out to discuss your
+            project and secure your place.
+          </p>
+
+          <div class="contact-details reveal-up">
+            <div class="contact-detail">
+              <span class="contact-detail-icon">✦</span>
+              <div>
+                <span class="contact-detail-label">Email</span>
+                <a href="mailto:hello@linkology.co" class="contact-detail-value">hello@linkology.co</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">✦</span>
+              <div>
+                <span class="contact-detail-label">Phone</span>
+                <a href="tel:+15551234567" class="contact-detail-value">+1 (555) 123-4567</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">✦</span>
+              <div>
+                <span class="contact-detail-label">Location</span>
+                <span class="contact-detail-value">New York, NY — Remote Worldwide</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials reveal-up">
+            <a href="#" class="contact-social" aria-label="Instagram">IG</a>
+            <a href="#" class="contact-social" aria-label="LinkedIn">LI</a>
+            <a href="#" class="contact-social" aria-label="Dribbble">DR</a>
+            <a href="#" class="contact-social" aria-label="Behance">BE</a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-up">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Your Name *</label>
+                <input class="form-input" type="text" id="name" name="name" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="john@example.com"
+                  required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="company">Company / Brand</label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="Your Company Name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="service">Service Required *</label>
+              <div class="form-select-wrap">
+                <select class="form-input form-select" id="service" name="service" required>
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="web-design">Web Design</option>
+                  <option value="development">Web Development</option>
+                  <option value="brand-identity">Brand Identity</option>
+                  <option value="ux-design">UI/UX Design</option>
+                  <option value="seo">SEO & Growth</option>
+                  <option value="ecommerce">E-Commerce</option>
+                  <option value="full-project">Full Project</option>
+                </select>
+                <span class="form-select-arrow">↓</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="budget">Project Budget</label>
+              <div class="form-select-wrap">
+                <select class="form-input form-select" id="budget" name="budget">
+                  <option value="" disabled selected>Select your budget range...</option>
+                  <option value="5k-10k">$5,000 – $10,000</option>
+                  <option value="10k-25k">$10,000 – $25,000</option>
+                  <option value="25k-50k">$25,000 – $50,000</option>
+                  <option value="50k+">$50,000+</option>
+                </select>
+                <span class="form-select-arrow">↓</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Tell Us About Your Project *</label>
+              <textarea class="form-input form-textarea" id="message" name="message" rows="5"
+                placeholder="Describe your project, goals, and timeline..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold form-submit" id="submit-btn">
+              <span class="btn-text">Send Your Inquiry →</span>
+              <span class="btn-spinner" hidden>
+                <svg class="spinner-svg" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none"
+                    stroke-dasharray="31.4" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s"
+                      repeatCount="indefinite" />
+                  </circle>
+                </svg>
+              </span>
+            </button>
+            <div class="form-success" id="form-success" hidden>
+              <span class="form-success-icon">✓</span>
+              <p>Thank you! We'll be in touch within 24 hours.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">
+            <img src="LinkologyLogo2.png" alt="Linkology" class="footer-logo-img" />
+          </a>
+          <p class="footer-tagline">Crafting digital masterpieces<br />for extraordinary brands.</p>
+        </div>
+
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">Company</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Portfolio</a></li>
+            <li><a href="#process">Process</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">Services</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#services">Web Design</a></li>
+            <li><a href="#services">Development</a></li>
+            <li><a href="#services">Brand Identity</a></li>
+            <li><a href="#services">E-Commerce</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">Connect</h4>
+          <ul class="footer-nav-list">
+            <li><a href="mailto:hello@linkology.co">hello@linkology.co</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Dribbble</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Linkology. All rights reserved. Crafted with precision.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span>·</span>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== PORTFOLIO PREVIEW MODAL ========== -->
+  <div class="preview-modal" id="preview-modal">
+    <div class="preview-modal-backdrop" id="preview-modal-backdrop"></div>
+    <div class="preview-modal-container">
+      <div class="preview-modal-topbar">
+        <div class="preview-modal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="preview-modal-url-bar">
+          <span class="preview-modal-url" id="preview-modal-url"></span>
+        </div>
+        <div class="preview-modal-actions">
+          <a href="#" class="preview-modal-external" id="preview-modal-external" target="_blank" rel="noopener"
+            aria-label="Open in new tab">↗</a>
+          <button class="preview-modal-close" id="preview-modal-close" aria-label="Close preview">✕</button>
+        </div>
+      </div>
+      <div class="preview-modal-body">
+        <div class="preview-modal-loader" id="preview-modal-loader">
+          <div class="loader-spinner"></div>
+          <span>Loading preview…</span>
+        </div>
+        <iframe id="preview-iframe" class="preview-iframe" frameborder="0" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
