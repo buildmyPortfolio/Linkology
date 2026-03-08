@@ -658,4 +658,25 @@
     }
   });
 
+  /* ─── Process Package Tabs ─── */
+  const processTabBtns = document.querySelectorAll('.process-tab-btn');
+  const processPanels = document.querySelectorAll('.process-panel');
+
+  function switchProcessTab(plan) {
+    processTabBtns.forEach(b => b.classList.toggle('active', b.dataset.plan === plan));
+    processPanels.forEach(p => p.classList.toggle('active', p.id === 'process-' + plan));
+  }
+
+  processTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => switchProcessTab(btn.dataset.plan));
+  });
+
+  // "See How It Works" links from pricing cards
+  document.querySelectorAll('.pricing-process-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const plan = link.dataset.process;
+      if (plan) switchProcessTab(plan);
+    });
+  });
+
 })();
