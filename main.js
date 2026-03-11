@@ -60,13 +60,21 @@
 
   /* ─── Navbar Scroll State ─── */
   const navbar = document.getElementById('navbar');
+  const backToTopBtn = document.getElementById('back-to-top');
   let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     navbar.classList.toggle('scrolled', scrollY > 30);
+    if (backToTopBtn) backToTopBtn.classList.toggle('visible', scrollY > 500);
     lastScroll = scrollY;
   }, { passive: true });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   /* ─── Mobile Menu ─── */
   const hamburger = document.getElementById('hamburger');
